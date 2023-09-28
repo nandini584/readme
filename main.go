@@ -4,7 +4,7 @@ Copyright © 2023 NAME HERE <EMAIL ADDRESS>
 */
 package main
 
-import ("github.com/nandini584/readme-cli/cmd"
+import (
 "fmt"
 "os"
 "github.com/spf13/cobra")
