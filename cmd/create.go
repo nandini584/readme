@@ -7,7 +7,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/spf13/cobra"
-	"util"
+	"github.com/nandini584/readme-cli/util"
 )
 
 // createCmd represents the create command
@@ -22,18 +22,23 @@ var createCmd = &cobra.Command{
 		readmeDescription, _ := cmd.Flags().GetString("description")
 		fmt.Println("Title:", readmeTitle)
 		fmt.Println("Description:", readmeDescription)
-		markdownContent,err := util.generateMarkdown (readmeTitle, readmeDescription)
+		file,err:=util.createFile()
 		if err!= nil {
 			fmt.Println(err)
 			return
 		}
-		err2:=util.writeFile(markdownContent)
-		if err2!=nil {
-			fmt.Println(err2)
-			return
-		}
-		fmt.Println(markdownContent)
-		fmt.Println("File created successfully")
+		// markdownContent,err := util.generateMarkdown (readmeTitle, readmeDescription)
+		// if err!= nil {
+		// 	fmt.Println(err)
+		// 	return
+		// }
+		// err2:=util.writeFile(markdownContent)
+		// if err2!=nil {
+		// 	fmt.Println(err2)
+		// 	return
+		// }
+		// fmt.Println(markdownContent)
+		// fmt.Println("File created successfully")
 	},
 
 }
